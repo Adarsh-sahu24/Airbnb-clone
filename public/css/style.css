@@ -1,0 +1,160 @@
+body{
+  font-family: "Plus Jakarta Sans", sans-serif !important ; 
+  font-optical-sizing: auto;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container{
+    flex: 1;
+}
+
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+
+.fa-compass{
+    color: #fe424d;
+}
+.nav-link{
+    color: #222222 !important;
+}
+
+.navbar-brand img{
+    width: 100px;
+    height: 50px;
+}
+
+
+/* footer */
+
+.if-info-link a{
+    text-decoration: none;
+    color: #222222;
+    margin: 0.3rem;
+}
+
+.if-info-link :hover{
+    text-decoration: underline;
+}
+
+
+.if-info-social,
+.if-info-link,
+.if-info-brand{
+    width: 100%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.if-info-social i{
+    font-size: 1.2rem;
+    margin: 0.5rem;
+}
+
+
+.if-info-link{
+    width: 100%;
+}
+
+.if-info{
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: space-evenly;
+}
+
+
+/* cards */
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 1rem;
+}
+
+.card-img-top{
+    border-radius: 1rem  !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text{
+    font-weight: 400 !important;
+}
+
+.listings-link{
+    text-decoration: none !important;
+}
+
+/* Card-Effects */
+
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* show Page */
+
+.show-img{
+    height: 50vb;
+}
+.btns{
+    display: flex;
+}
+
+/* ratings */
+
+
+
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2rem;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+  color: #f5b301;
+}
+
+
+/* map */
+#map { 
+    height: 400px;
+    width: 100%;
+    border-radius: 1rem; 
+}
+
+#marker {
+    background-image: url('https://docs.mapbox.com/mapbox-gl-js/assets/washington-monument.jpg');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}

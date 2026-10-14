@@ -1,0 +1,170 @@
+<% layout('/layouts/boilerplate.ejs') -%>
+
+<style>
+    #features{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    #filters{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .filter{
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        text-align: center;
+        opacity: 0.8;
+    }
+    .filter:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+    .gst{
+        display: none;
+    }
+    .tax-toggle{
+    border: 1px solid black; 
+    border-radius: 1rem;
+    height: 3.5rem;
+    padding: 1rem;
+    margin-top: 0.7rem;
+    display: flex;
+    align-items: center;
+}
+
+</style>
+
+
+
+<div id="filters">
+    <div class="filter">
+        <i class="fa-solid fa-fire"></i>
+        <p>Trending</p>
+    </div>
+    <div class="filter">
+        <i class="fa-solid fa-umbrella-beach"></i>
+        <p>Beach</p>
+    </div>
+    <div class="filter">
+        <i class="fa-regular fa-snowflake"></i>
+        <p>Snow</p>
+    </div>
+    <div class="filter">
+        <i class="fa-solid fa-mountain"></i>
+        <p>Mountains</p>
+    </div>
+    <div class="filter">
+        <i class="fa-solid fa-house-chimney"></i>
+        <p>Cabins</p>
+    </div>
+    <div class="filter">
+        <i class="fa-solid fa-tent"></i>
+        <p>Camping</p>
+    </div>
+    <div class="filter">
+        <i class="fa-solid fa-heart"></i>
+        <p>Loved</p>
+    </div>
+    <div class="filter">
+        <i class="fa-solid fa-monument"></i>
+        <p>Monuments</p>
+    </div>
+    <div class="filter">
+        <i class="fa-solid fa-bed"></i>
+        <p>Stay</p>
+    </div>
+    <div class="filter">
+        <i class="fa-solid fa-utensils"></i>
+        <p>Food</p>
+    </div>
+    <div class="filter">
+        <i class="fa-solid fa-tree"></i>
+        <p>Nature</p>
+    </div>
+    <!-- <div class="filter">
+        <i class="fa-solid fa-water-ladder"></i>
+        <p>Pools</p>
+    </div>
+    <div class="filter">
+        <i class="fa-brands fa-fort-awesome"></i>
+        <p>Catials</p>
+    </div>
+    <div class="filter">
+        <i class="fa-solid fa-tractor"></i>
+        <p>Farms</p>
+    </div> -->
+    <div class="tax-toggle">
+        <div class="form-check-reverse form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+            <label class="form-check-label" for="switchCheckDefault">Default switch checkbox input</label>
+        </div>
+    </div>
+</div>
+
+    
+
+
+
+
+
+<!-- <div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div> -->
+
+
+
+
+<div class="row row-cols-lg-5 row-cols-md-2 row-cols-sm-1">
+    <% for(listing of allListings){ %>
+        <a href="/listings/<%= listing._id %>" class="listings-link">
+            <div class="card listing-card" > 
+                <img src="<%= listing.image.url %>" class="card-img-top" style="height: 15rem;" alt="<%= listing.title %> image">
+                <div class="card-img-overlay"></div>
+                <div class="card-body">
+                    <p class="card-text">
+                        <b><%= listing.title %></b> <br>
+                        &#8377; <%= listing.price %> 
+                        <i class="gst">+18% GST</i>&nbsp; &nbsp; for 2 night 
+                    </p><!-- 6c6c6c -->
+                </div>
+            </div>
+        </a>
+    <% } %>
+</div>
+
+
+
+<script>
+    let taxswitch = document.getElementById("switchCheckDefault");
+    taxswitch.addEventListener("click", () => {
+        let gsts = document.getElementsByClassName("gst");
+        for(gst of gsts){
+            if(gst.style.display != "inline"){
+                gst.style.display = "inline";
+            }
+            else{
+                gst.style.display = "none";
+            }
+        }
+    })
+</script>
