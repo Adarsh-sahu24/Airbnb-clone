@@ -95,8 +95,8 @@ app.use("/",usersRoute);
 
 
 
-app.all("*", (req, res, next) => {
-    next(new ExpressError(404, "page not found !"));
+app.use((req, res, next) => {
+    next(new ExpressError(404, "Page Not Found!"));
 });
 
 app.use((err,req,res,next) => {
